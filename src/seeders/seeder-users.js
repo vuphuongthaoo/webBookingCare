@@ -6,6 +6,7 @@ module.exports = {
       firstName: 'John',
       lastName: 'Doe',
       email: 'example@example.com',
+      password: '123456', //plain text dghjas123 -> hash word
       createdAt: new Date(),
       updatedAt: new Date()
     }]);

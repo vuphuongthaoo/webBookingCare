@@ -23,7 +23,7 @@ let handleUserLogin = (email, password) => {
         //user already exist
 
         let user = await db.User.findOne({
-          attributes: ["email", "roleId", "password"], //define columns that you want to show
+          attributes: ["email", "roleId", "password", "firstName", "lastName"], //define columns that you want to show
           where: {
             email: email,
           },
@@ -123,8 +123,9 @@ let createNewUser = (data) => {
           lastName: data.lastName,
           address: data.address,
           phonenumber: data.phonenumber,
-          gender: data.gender === "1" ? true : false,
+          gender: data.gender,
           roleId: data.roleId,
+          positionId: data.positionId,
         });
         resolve({
           errCode: 0,
